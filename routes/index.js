@@ -45,10 +45,10 @@ router.get('/sign-up-completed', function(req, res, next) {
 router.post('/', function(req, res, next) {
   let data = req.body;
   data.password_hash = md5(data.password);
-  const newUser = new User(req.body);
   
   User.findOne({'email': data.email, 'password_hash': data.password_hash}, function(err, data){
     if (err){
+      console.log('error', err);
       handleError(err)
     }else{
       if(data != null || data != undefined){

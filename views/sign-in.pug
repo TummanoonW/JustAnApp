@@ -3,44 +3,15 @@ extends layout
 block content
   //h1= title
   //p Welcome to #{title}
-  .limiter
-  .container-login100
-    .wrap-login100
-      .login100-pic.js-tilt(data-tilt='')
-        img(src='images/img-01.png' alt='IMG')
-      form.login100-form.validate-form(method='POST')
-        span.login100-form-title
-          | Member Sign In
-        .wrap-input100.validate-input(data-validate='Valid email is required: ex@abc.xyz')
-          input.input100(type='text' name='email' placeholder='Email')
-          span.focus-input100
-          span.symbol-input100
-            i.fa.fa-envelope(aria-hidden='true')
-        .wrap-input100.validate-input(data-validate='Password is required')
-          input.input100(type='password' name='password' placeholder='Password')
-          span.focus-input100
-          span.symbol-input100
-            i.fa.fa-lock(aria-hidden='true')
-        .container-login100-form-btn
-          button.login100-form-btn
-            | Sign In
-        .text-center.p-t-12
-          span.txt1.m-r-3
-            | Template by
-          a.txt2(href='https://colorlib.com/wp/template/login-form-v1/' target='_blank')
-            | Colorlib
-        .text-center.p-t-136
-          a.txt2(href='/sign-up')
-            | Create your Account
-            i.fa.fa-long-arrow-right.m-l-5(aria-hidden='true')
-
-  script(src='vendor/jquery/jquery-3.2.1.min.js')
-  script(src='vendor/bootstrap/js/popper.js')
-  script(src='vendor/bootstrap/js/bootstrap.min.js')
-  script(src='vendor/select2/select2.min.js')
-  script(src='vendor/tilt/tilt.jquery.min.js')
-  script.
-    $('.js-tilt').tilt({
-    scale: 1.1
-    })
-  script(src='js/main.js')
+  .form-zone
+    .title-zone
+      h1 Member Sign In
+    form(method='POST')
+      .input-zone
+          input(type='text' name='email' placeholder='Email')
+      .input-zone
+          input(type='password' name='password' placeholder='Password')
+      .input-zone
+        input.btn(type='submit' value='SIGN IN')
+      .bottom-link
+        a(href='/sign-up') Create your account here
